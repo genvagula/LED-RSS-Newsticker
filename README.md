@@ -12,13 +12,13 @@ The # of rows is indicated with -r
 If you are using a 16 pixel tall matrix (a 16x32) use -r 16
 If you are using 32 pixel tall matrix (64x32 or 32x32) use -r 32
 j,jn,
-#Chained#
+##Chained
 Each matrix is considered 32 pixels wide. If you have multiple matrices chained use -c to increase the width. If you have 3 chained together, use -c 3 If you have a 64x32 matrix, it looks like 2 chained 32x32 so use -c 2
 ,.
-#Time Running
+##Time Running
 You can run the demo for a given amount of time with -t e.g. -t 60 is 60 seconds
 
-#Demo
+##Demo
 There's a bunch of built-in demos you can run to test out the matrix, start with -D 0 which will show a spinning rainbow square or you can run the -D 1 scrolling image demo, just give it a ppm image to display.
 
 
