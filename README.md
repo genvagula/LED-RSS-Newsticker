@@ -5,28 +5,24 @@ Displays news from RSS feeds to a LED matrix displays
 Code is originally (c) Henner Zeller h.zeller@acm.org, and I grant you the permission to do whatever you want with it :) 2013-12 - changed to drive a 16x32 matrix (half the original intended)
 
 
+# Background Knowledge
 
-# BACKGROUND KNOWLEDGE
-
-Rows
+##Rows
 The # of rows is indicated with -r
 If you are using a 16 pixel tall matrix (a 16x32) use -r 16
 If you are using 32 pixel tall matrix (64x32 or 32x32) use -r 32
-
-Chained
+j,jn,
+#Chained#
 Each matrix is considered 32 pixels wide. If you have multiple matrices chained use -c to increase the width. If you have 3 chained together, use -c 3 If you have a 64x32 matrix, it looks like 2 chained 32x32 so use -c 2
-
-Time Running
+,.
+#Time Running
 You can run the demo for a given amount of time with -t e.g. -t 60 is 60 seconds
 
-Demo
+#Demo
 There's a bunch of built-in demos you can run to test out the matrix, start with -D 0 which will show a spinning rainbow square or you can run the -D 1 scrolling image demo, just give it a ppm image to display.
 
 
-
-# PEREQUISITE SOFTWARE
-
-
+# Perequisite Software
 You will need to get into a command line via the HDMI monitor, ssh or console cable. You will also need to make sure your Pi is on the Internet via a WiFi or Ethernet connection.
 
 To get started with the code, first install Python Imaging Library (PIL) to add support for drawing shapes (lines, circles, etc.) and loading images (GIF, PNG, JPEG, etc.). PIL is not always installed by default on some systems, so let's start with:
@@ -50,7 +46,7 @@ cd lib
 nano Makefile
 
 
-# OPTIONS
+#Options
 
 $ make
 $ sudo ./demo
