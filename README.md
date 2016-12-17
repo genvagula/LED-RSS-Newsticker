@@ -48,6 +48,7 @@ nano Makefile
 
 #Options
 
+```
 $ make
 $ sudo ./demo
 usage: ./demo <options> -D <demo-nr> [optional parameter]
@@ -88,4 +89,6 @@ Demos, choosen with -D
 Example:
         ./demo -t 10 -D 1 runtext.ppm
 Scrolls the runtext for 10 seconds
+```
+
 
