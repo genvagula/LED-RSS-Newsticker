@@ -27,8 +27,10 @@ You will need to get into a command line via the HDMI monitor, ssh or console ca
 
 To get started with the code, first install Python Imaging Library (PIL) to add support for drawing shapes (lines, circles, etc.) and loading images (GIF, PNG, JPEG, etc.). PIL is not always installed by default on some systems, so let's start with:
 
+```
 sudo apt-get update
 sudo apt-get install python-dev python-imaging
+```
 
 PIL graphics do not have an immediate effect on the display. The image is drawn into a separate buffer, which is then copied to the matrix. On the plus side, this extra step affords us the opportunity for smooth animation and scrolling.
 The rgbmatrix.so library only supports these image modes: RGB (full color) (RGBA is also supported but the alpha channel is ignored); color palette (such as GIF images use); and bitmap (black/white). Colorspaces like CMYK and YCbCr are not directly handled, but you might be able to convert these to RGB through other PIL functions.
@@ -39,12 +41,12 @@ Graphics functions (lines, etc.) are here: The ImageDraw Module /http://effbot.o
 
 
 Setup code:
-
+```
 git clone https://github.com/hzeller/rpi-rgb-led-matrix
 cd rpi-rgb-led-matrix
 cd lib
 nano Makefile
-
+```
 
 #Options
 
