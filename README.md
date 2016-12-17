@@ -6,7 +6,7 @@ Code is originally (c) Henner Zeller h.zeller@acm.org, and I grant you the permi
 
 
 
-1. BACKGROUND KNOWLEDGE
+# BACKGROUND KNOWLEDGE
 
 Rows
 The # of rows is indicated with -r
@@ -24,7 +24,7 @@ There's a bunch of built-in demos you can run to test out the matrix, start with
 
 
 
-2. PEREQUISITE SOFTWARE
+# PEREQUISITE SOFTWARE
 
 
 You will need to get into a command line via the HDMI monitor, ssh or console cable. You will also need to make sure your Pi is on the Internet via a WiFi or Ethernet connection.
@@ -50,7 +50,7 @@ cd lib
 nano Makefile
 
 
-3. OPTIONS
+# OPTIONS
 
 $ make
 $ sudo ./demo
