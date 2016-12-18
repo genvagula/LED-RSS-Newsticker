@@ -66,7 +66,7 @@ def writeImage(url, count):
         else:
             return colorRandom()
     text = ((headLine, randCol(count)), (link, colorRandom()))
-    font = ImageFont.truetype("/usr/share/fonts/truetype/freefont/FreeSans.ttf", 16)
+    font = ImageFont.truetype("/usr/share/fonts/truetype/freefont/Lato-Regular.ttf", 14)
     all_text = ""
     for text_color_pair in text:
         t = text_color_pair[0]
@@ -93,19 +93,6 @@ def run():
 def showOnLEDDisplay():
     for disp in displayItems[:60]:
         os.system("sudo ./demo --led-rows=16 --led-chain=12 --led-show-refresh -D 1"+disp)
-
-
-#It is always good to set up a signal handler to cleanly exit when we
-#eceive a CTRL-C for instance. The DrawOnCanvas() routine is looking
-#for that.
-  signal(SIGTERM, InterruptHandler);
-  signal(SIGINT, InterruptHandler);
-
-  DrawOnCanvas(canvas);    #Using the canvas.
-
-#Animation finished. Shut down the RGB matrix.
-  canvas->Clear();
-  delete canvas;
 
 if __name__ == '__main__':
     run()
