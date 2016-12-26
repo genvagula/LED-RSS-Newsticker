@@ -1,12 +1,8 @@
-# led-rss-ampron-led-newsticker
+# led-rss-led-newsticker
 Displays news from RSS feeds to a LED matrix displays
 
 Works with LED-matrix library made by (c) Henner Zeller h.zeller@acm.org
 https://github.com/hzeller/rpi-rgb-led-matrix
-
-# Background Knowledge
-
-
 
 # Perequisite Software
 You will need to get into a command line via the HDMI monitor, ssh or console cable. You will also need to make sure your Pi is on the Internet via a WiFi or Ethernet connection.
