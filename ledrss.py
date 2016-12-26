@@ -3,22 +3,20 @@
 # BE SURE TO CLONE IT AND READ THE README
 
 
-import os, time, threading, random
+import os, time, threading, random, signal
 import feedparser
 from PIL import Image, ImageFont, ImageDraw
 from random import shuffle
-
 
 items=[]
 displayItems=[]
 feeds=[
     #enter all news feeds you want here
-    "http://www.postimees.ee/rss/",
-    "http://feeds.feedburner.com/delfiuudised?format=xml",
+    "http://www.postimees.ee/rss"
     ]
 
 def colorRed():
-    return (255, 0, 0)
+    return (255, 255, 0)
 
 def colorGreen():
     return (0, 255, 0)
@@ -35,7 +33,7 @@ def populateItems():
     del displayItems[:]
 
     #delete all the image files
-    os.system("find . -name \*.ppm -delete")
+    os.system("find . -name '*.ppm' -type f -delete")
     for url in feeds:
         feed=feedparser.parse(url)
         posts=feed["items"]
@@ -72,7 +70,7 @@ def writeImage(url, count):
         t = text_color_pair[0]
         all_text = all_text + t
     width, ignore = font.getsize(all_text)
-    im = Image.new("RGB", (width + 30, 16), "black")
+    im = Image.new("RGB", (width + 35, 16), "black")
     draw = ImageDraw.Draw(im)
     x = 0;
     for text_color_pair in text:
@@ -87,35 +85,25 @@ def writeImage(url, count):
 def run():
     print("News Fetched at {}\n".format(time.ctime()))
     createLinks()
-    threading.Timer(len(items) * 60, run).start()
+    threading.Timer(len(items) * 900, run).start()
     showOnLEDDisplay()
 
 def showOnLEDDisplay():
-    for disp in displayItems[:60]:
-        os.system("sudo ./demo --led-rows=16 --led-chain=12 --led-show-refresh -D 1"+disp)
+    for disp in displayItems[:900]:
+        os.system("sudo ./demo --led-rows=16 --led-chain=3 --led-pwm-bits=5 --led-pwm-lsb-nanoseconds 200 --led-show-refresh --led-brightness=40 -t 25 -D1 "+disp)
+
+
+#Ctrl-C stuff
+def sigint_handler(signum, frame):
+	Print ("Stop pressing the CTRL+C!")
+
+signal.signal(signal.SIGINT, sigint_handler)
+
+def main():
+	while True:
+		Print (".")
+		time.sleep(1)
+
 
 if __name__ == '__main__':
     run()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
