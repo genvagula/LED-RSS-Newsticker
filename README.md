@@ -34,7 +34,7 @@ nano Makefile
 
 #Issues
 
-Code have some issues. Please go and see under Issues tab to see if there is anything you could help me with.
+Code have some issues. Please go and see under [Issues] (https://github.com/genvagula/led-rss-newsticker/issues) tab to see if there is anything you could help me with.
 Thanks!
 
 Let me know if you got it working. That motivates!
